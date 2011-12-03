@@ -1,0 +1,18 @@
+NomeDoProjeto: TrabalhoLP3
+
+1º cria no mysql o banco ‘trabalhoLP3’ so o database
+2º cria o projeto no netbeans do tipo java web com glassfish, ai habilita os frameworks JSF e hibernate
+ao habilitar o hibernate, não esqueça de selecionar o database correto ‘trabalhoLP3’
+vc cria somente o banco, sem tabelas e atributos, depois q mapear as classes, o hibernate se encarrega disso
+obs.: mesmo se vc criar o banco com tabelas e atributos, se vc determinar q o hibernate vai gerar as tabelas, ele acaba apagando oq vc havia feito e gera conforme o mapeamento das classes
+
+Teremos a seguinte estrutura de pacotes:
+
+hibernate:
+- persistencia.entidades (aqui ficam as classes mapeadas do banco)
+	ex: Cliente, Pedido, Item, Produto 
+	@entity
+	public class Cliente{}
+     - persistencia.dao (Aqui os métodos que farão o trabalho sujo [salvar, consultar..])
+	ex: ClienteDao, PedidoDao, ItemDao, ProdutoDao
+	Aqui utilizaremos as classes HibernateUtil e Session, para persistir os objetos do pacote persistencia.entidades no banco
