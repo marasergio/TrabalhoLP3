@@ -30,7 +30,7 @@ public class Cliente implements Serializable {
     @Column(name="cli_email")
     private String email;
     
-    @OneToMany(mappedBy="cliente")
+    @OneToMany(mappedBy="cliente", fetch= FetchType.LAZY)
     List<Pedido> pedidos =  new ArrayList<Pedido>();
 
     public Cliente() {
@@ -76,5 +76,7 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
     
-    
+    public String toString(){
+        return this.nome;
+    }
 }

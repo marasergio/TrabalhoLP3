@@ -18,6 +18,9 @@ public class Produto {
     @Column(name="prod_id")
     private Long id;
     
+    @Column(name="prod_nome")
+    private String nome;
+    
     @Column(name="prod_descricao")
     private String descricao;
     
@@ -27,6 +30,15 @@ public class Produto {
     public Produto() {
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    
     public String getDescricao() {
         return descricao;
     }

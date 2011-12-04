@@ -31,7 +31,7 @@ public class Pedido implements Serializable {
     @JoinColumn(name="id_cliente")
     private Cliente cliente;
     
-    @OneToMany(mappedBy="pedido")
+    @OneToMany(mappedBy="pedido", fetch= FetchType.LAZY)
     private List<Item> itens = new ArrayList<Item>();
 
     public Pedido() {
