@@ -30,6 +30,7 @@ public class Cliente implements Serializable {
     @Column(name="cli_email")
     private String email;
     
+    @OneToMany(mappedBy="cliente")
     List<Pedido> pedidos =  new ArrayList<Pedido>();
 
     public Cliente() {

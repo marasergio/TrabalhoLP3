@@ -8,6 +8,11 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">mara</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
+    <mapping class="persistencia.entidades.Cliente"/>
+    <mapping class="persistencia.entidades.Pedido"/>
+    <mapping class="persistencia.entidades.Item"/>
+    <mapping class="persistencia.entidades.Produto"/>
   </session-factory>
 </hibernate-configuration>
