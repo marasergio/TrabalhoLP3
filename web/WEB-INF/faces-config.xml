@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+     <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LOGADO</from-outcome>
+            <to-view-id>/protegido/produtos.xhtml</to-view-id>
+            
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>NAO_LOGADO</from-outcome>
+            <to-view-id>/error.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/produtos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LOGOFF</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>    
+        
+    </navigation-rule>
+</faces-config>

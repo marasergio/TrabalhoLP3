@@ -3,10 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>TrabalhoLP3</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>Trabalho LP3</h1>
+        
+        <h2>Logar</h2>
+        <h:form>
+            <h:outputLabel value="Email"/> 
+            <h:inputText value="#{loginBean.email}"/><br/>
+            <h:outputLabel value="Senha"/> 
+            <h:inputSecret value="#{loginBean.senha}"/><br/>
+            <h:commandButton value="Logar" action="#{loginBean.logar}"/>
+            
+        </h:form>
     </h:body>
 </html>
 
