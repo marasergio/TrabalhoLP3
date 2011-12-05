@@ -47,7 +47,7 @@ public class LoginManagedBean {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         ExternalContext externalContext = facesContext.getExternalContext();
         HttpSession session = ((HttpServletRequest) externalContext.getRequest()).getSession();
-        if (this.email.equals("mara") && this.senha.equals("mara123,")) {
+        if (this.email.equals("mara") && this.senha.equals("mara123")) {
             session.setAttribute("LOGADO", "SIM");
             return "LOGADO";
         }
