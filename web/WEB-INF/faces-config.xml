@@ -21,11 +21,18 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/protegido/produtos.xhtml</from-view-id>
+        <from-view-id>/protegido/*</from-view-id>
         <navigation-case>
             <from-outcome>LOGOFF</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>    
-        
+        </navigation-case>            
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/exemplo_cadastro.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>produto_salvo</from-outcome>
+            <to-view-id>/exemplo_cadastro.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>
