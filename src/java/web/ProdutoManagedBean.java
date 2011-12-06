@@ -42,9 +42,25 @@ public class ProdutoManagedBean {
         ProdutoDao dao = new ProdutoDao();
         dao.salveUpdate(produto);
         this.produto = new Produto();
-        return "produto_salvo";
+        return "PRODUTO_SALVO";
     }
 
+    public String prepararCadastrar(){
+        produto = new Produto();
+        return "CADASTRAR_PRODUTO";
+    }
+
+    public String prepararAlterar(){
+        return "ALTERAR";
+    }
+    
+    public void excluir(){
+        ProdutoDao dao = new ProdutoDao();
+        dao.delete(produto);
+        produto = new Produto();
+        
+    }
+    
     public void setProduto(Produto produto) {
         this.produto = produto;
     }

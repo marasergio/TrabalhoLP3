@@ -11,9 +11,9 @@
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>LOGADO</from-outcome>
-            <to-view-id>/protegido/produtos.xhtml</to-view-id>
-            
+            <to-view-id>/protegido/index.xhtml</to-view-id>
         </navigation-case>
+        
         <navigation-case>
             <from-outcome>NAO_LOGADO</from-outcome>
             <to-view-id>/error.xhtml</to-view-id>
@@ -29,10 +29,24 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/protegido/exemplo_cadastro.xhtml</from-view-id>
+        <from-view-id>/protegido/produto/gerenciarProduto.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>produto_salvo</from-outcome>
-            <to-view-id>/exemplo_cadastro.xhtml</to-view-id>
+            <from-outcome>PRODUTO_SALVO</from-outcome>
+            <to-view-id>/protegido/produto/produtos.xhtml</to-view-id>
         </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/produto/produtos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>CADASTRAR_PRODUTO</from-outcome>
+            <to-view-id>/protegido/produto/gerenciarProduto.xhtml</to-view-id>
+        </navigation-case>
+       
+        <navigation-case>
+            <from-outcome>ALTERAR</from-outcome>
+            <to-view-id>/protegido/produto/gerenciarProduto.xhtml</to-view-id>
+        </navigation-case>
+        
     </navigation-rule>
 </faces-config>

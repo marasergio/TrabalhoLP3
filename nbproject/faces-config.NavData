@@ -2,10 +2,13 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="error.xhtml" x="164" y="145" zoom="true"/>
+        <Node id="protegido/produto/produtos.xhtml" x="487" y="391" zoom="true"/>
+        <Node id="error.xhtml" x="22" y="207" zoom="true"/>
         <Node id="index.xhtml" x="247" y="416" zoom="false"/>
-        <Node id="produto/produto.xhtml" x="781" y="328" zoom="true"/>
-        <Node id="protegido/produtos.xhtml" x="354" y="144" zoom="true"/>
+        <Node id="protegido/index.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="protegido/produto/gerenciarProduto.xhtml" x="658" y="108" zoom="true"/>
+        <Node id="protegido/*" x="233" y="206" zoom="true"/>
+        <Node id="protegido/exemplo_cadastro.xhtml" x="400" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>
