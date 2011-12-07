@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
+import org.hibernate.annotations.Cascade;
 
 /**
  *
@@ -31,7 +32,8 @@ public class Pedido implements Serializable {
     @JoinColumn(name="id_cliente")
     private Cliente cliente;
     
-    @OneToMany(mappedBy="pedido", fetch= FetchType.LAZY)
+    @OneToMany(mappedBy="pedido",fetch= FetchType.LAZY)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Item> itens = new ArrayList<Item>();
 
     public Pedido() {
