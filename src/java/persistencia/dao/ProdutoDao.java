@@ -49,4 +49,12 @@ public class ProdutoDao {
 
         return query.list();
     }
+    
+    public Produto getProduto(Long id){
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction().begin();
+        Produto produto = (Produto) session.get(Produto.class, id);
+        session.close();
+        return produto;
+    }
 }

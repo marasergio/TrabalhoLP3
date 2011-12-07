@@ -5,6 +5,7 @@
 package persistencia.dao;
 
 import org.hibernate.Session;
+import persistencia.entidades.Item;
 import persistencia.util.HibernateUtil;
 
 /**
@@ -13,11 +14,6 @@ import persistencia.util.HibernateUtil;
  */
 public class ItemDao {
 
-    private static class Item {
-
-        public Item() {
-        }
-    }
     public void salveUpdate(Item item){
         Session session = HibernateUtil.getSession();
         session.beginTransaction().begin();
