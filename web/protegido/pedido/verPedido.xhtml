@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Trabalho LP3</title>
+    </h:head>
+    <h:body>
+        <h1>Visualizar Pedido</h1>
+        
+        <h:form>
+            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
+            
+            <p>
+                <b>Cliente:</b> <h:outputText value="#{pedidoBean.pedido.cliente.nome}" /><br/>
+                <b>Numero Pedido:</b> 00<h:outputText value="#{pedidoBean.pedido.numero}" /><br/>
+                <b>Total do Pedido:</b> R$ <h:outputText value="#{pedidoBean.pedido.total}" />
+            </p>
+            
+            <h:dataTable var="item" value="#{pedidoBean.pedido.itens}" border="1" cellpadding="5" cellspacing="0">
+                <h:column>
+                    <f:facet name="header">Produto</f:facet>
+                    <h:outputText value="#{item.produto.nome}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Quantidade</f:facet>
+                    <h:outputText value="#{item.quantidade}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">Valor</f:facet>
+                    <h:outputText value="#{item.valor}"/>
+                </h:column>
+                
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
