@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Trabalho LP3</title>
+    </h:head>
+    <h:body>
+        <h1>Editar Cliente</h1>
+        
+        <h:form>
+            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
+        </h:form>
+        <h:form>
+            <h:inputHidden value="#{clienteBean.cliente.id}"/>
+            
+            <h:outputLabel value="Nome*"/>
+            <h:inputText id="nome" value="#{clienteBean.cliente.nome}" required="true" requiredMessage="*campo nome é obrigatório"/>
+            
+            <h:outputLabel value="Email"/>
+            <h:inputText value="#{clienteBean.cliente.email}"/>
+            
+            <h:commandButton value="Salvar" action="#{clienteBean.salveUpdate}"/><br/>
+            
+            <span style="color: red"><h:message for="nome"/></span>
+        </h:form>
+    </h:body>
+</html>

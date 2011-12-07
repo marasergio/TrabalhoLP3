@@ -4,34 +4,28 @@
  */
 package persistencia.entidades;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
 
 /**
  *
- * @author Mara
+ * @author Mara-Netbook
  */
 @Entity
-@Table(name="tb_cliente")
-public class Cliente implements Serializable {
+@Table(name="tb_usuario")
+public class Usuario {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="cli_id")
+    @Column(name="usu_id")
     private Long id;
     
-    @Column(name="cli_nome")
+    @Column(name="usu_nome")
     private String nome;
-           
-    @Column(name="cli_email")
+    
+    @Column(name="usu_email")
     private String email;
     
-    @OneToMany(mappedBy="cliente", fetch= FetchType.LAZY)
-    List<Pedido> pedidos =  new ArrayList<Pedido>();
-
-    public Cliente() {
-    }
+    @Column(name="usu_senha")
+    private String senha;
 
     public String getEmail() {
         return email;
@@ -57,15 +51,13 @@ public class Cliente implements Serializable {
         this.nome = nome;
     }
 
-    public List<Pedido> getPedidos() {
-        return pedidos;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
-
-    public String toString(){
-        return this.nome;
-    }
+    
+    
 }

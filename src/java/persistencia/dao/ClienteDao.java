@@ -14,15 +14,14 @@ import persistencia.util.HibernateUtil;
  * @author Mara
  */
 public class ClienteDao {
-    public void salveUpdate(Cliente cliente){
+    public void salveUpdate(Cliente cliente) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction().begin();
         session.saveOrUpdate(cliente);
         session.getTransaction().commit();
         session.close();
     }
-    
-     public void delete(Cliente cliente){
+    public void delete(Cliente cliente){
         Session session = HibernateUtil.getSession();
         session.beginTransaction().begin();
         session.delete(cliente);
@@ -42,16 +41,5 @@ public class ClienteDao {
          session.beginTransaction().begin();
          return (Cliente) session.get(Cliente.class, id);
      }
-     
-     public static void main(String[] args) {
-        Cliente c = new Cliente();
-           c.setNome("Nina");     
-        ClienteDao dao = new ClienteDao();
-    
-        c = dao.getCliente(1L);
-         System.out.println(c);
-       
-        //dao.salveUpdate(c);
-    }
      
 }

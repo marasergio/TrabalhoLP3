@@ -12,9 +12,9 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <h1>Produtos</h1>
-        <p><a href="../index.xhtml">voltar</a></p>
+        
         <h:form>
-            <h:commandButton value="Novo produto" action="#{produtoBean.prepararCadastrar}"/>
+            <p><h:commandButton value="Novo produto" action="CADASTRAR_PRODUTO"/></p>
             <h:dataTable var="produto" value="#{produtoBean.listaProdutos}" border="1" cellpadding="5" cellspacing="0">
                 <h:column>
                     <f:facet name="header">
@@ -46,7 +46,7 @@ and open the template in the editor.
                 </h:column>
 
                 <h:column>
-                    <h:commandButton value="alterar" action="#{produtoBean.prepararAlterar}">
+                    <h:commandButton value="alterar" action="ALTERAR_PRODUTO">
                         <f:setPropertyActionListener value="#{produto}" target="#{produtoBean.produto}"/>
                     </h:commandButton>
                 </h:column>    
@@ -58,6 +58,9 @@ and open the template in the editor.
                     </h:commandButton>
                 </h:column>    
             </h:dataTable>
+            
+            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
+            
         </h:form>
     </h:body>
 </html>

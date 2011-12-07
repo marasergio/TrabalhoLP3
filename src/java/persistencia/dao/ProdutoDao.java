@@ -42,22 +42,11 @@ public class ProdutoDao {
     public List<Produto> buscarProduto(String nome) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction().begin();
-        
+
         String hql = "SELECT p FROM Produto p WHERE  p.nome Like :nome";
         Query query = session.createQuery(hql);
-        query.setString("nome", "%"+nome+"%");
-        
-        return query.list();
-    }
+        query.setString("nome", "%" + nome + "%");
 
-    public static void main(String[] args) {
-        Produto p = new Produto();
-        //p.setPreco(15.20);
-        p.setNome("coca cola");
-        
-        ProdutoDao dao = new ProdutoDao();
-        for(Produto prod : dao.buscarProduto("uar")){
-            System.out.println(prod.getNome());
-        }
+        return query.list();
     }
 }

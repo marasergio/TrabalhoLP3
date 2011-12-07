@@ -7,7 +7,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
-     <navigation-rule>
+    <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>LOGADO</from-outcome>
@@ -18,14 +18,33 @@
             <from-outcome>NAO_LOGADO</from-outcome>
             <to-view-id>/error.xhtml</to-view-id>
         </navigation-case>
+        
     </navigation-rule>
+    
+    
     
     <navigation-rule>
         <from-view-id>/protegido/*</from-view-id>
         <navigation-case>
             <from-outcome>LOGOFF</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
-        </navigation-case>            
+        </navigation-case> 
+        
+        <navigation-case>
+            <from-outcome>CLIENTE</from-outcome>
+            <to-view-id>/protegido/cliente/clientes.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>PRODUTO</from-outcome>
+            <to-view-id>/protegido/produto/produtos.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>PEDIDO</from-outcome>
+            <to-view-id>/protegido/pedido/pedidos.xhtml</to-view-id>
+        </navigation-case>
+    
     </navigation-rule>
     
     <navigation-rule>
@@ -44,9 +63,42 @@
         </navigation-case>
        
         <navigation-case>
-            <from-outcome>ALTERAR</from-outcome>
+            <from-outcome>ALTERAR_PRODUTO</from-outcome>
             <to-view-id>/protegido/produto/gerenciarProduto.xhtml</to-view-id>
         </navigation-case>
-        
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/cliente/gerenciarCliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>SALVO_CLIENTE</from-outcome>
+            <to-view-id>/protegido/cliente/clientes.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/cliente/clientes.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+        
+    <navigation-rule>
+        <from-view-id>/protegido/cliente/clientes.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ALTERAR_CLIENTE</from-outcome>
+            <to-view-id>/protegido/cliente/gerenciarCliente.xhtml</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>CADASTRAR_CLIENTE</from-outcome>
+            <to-view-id>/protegido/cliente/gerenciarCliente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
 </faces-config>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Trabalho LP3</title>
+    </h:head>
+    <h:body>
+        <h1>Clientes</h1>
+        
+        <h:form>
+            <h:commandButton value="Novo Cliente" action="CADASTRAR_CLIENTE"/><br/><br/>
+            <h:dataTable var="cliente" value="#{clienteBean.listaClientes}" border="1" cellpadding="5" cellspacing="0">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{cliente.id}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome"/>
+                    </f:facet>
+                    <h:outputText value="#{cliente.nome}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Email"/>
+                    </f:facet>
+                    <h:outputText value="#{cliente.email}"/>
+                </h:column>
+                
+                <h:column>
+                    <h:commandButton value="alterar" action="ALTERAR_CLIENTE">
+                        <f:setPropertyActionListener value="#{cliente}" target="#{clienteBean.cliente}"/>
+                    </h:commandButton>
+                    
+                </h:column>
+                <h:column>
+                    <h:commandButton value="excluir" action="#{clienteBean.excluir}">
+                        <f:setPropertyActionListener value="#{cliente}" target="#{clienteBean.cliente}"/>
+                    </h:commandButton>
+                </h:column>
+            </h:dataTable>
+            
+            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
+            
+        </h:form>
+    </h:body>
+</html>

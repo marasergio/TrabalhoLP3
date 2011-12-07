@@ -11,11 +11,12 @@ and open the template in the editor.
         <title>TODO supply a title</title>
     </head>
     <body>
-        <h1>Produtos</h1>
-        <p><a href="produtos.xhtml">voltar</a></p>
-        <h2>Editar Produto</h2>
+        <h1>Editar Produto</h1>
         
+                
     <h:form>
+        <p><a href="produtos.xhtml">voltar</a></p>
+        
         <h:panelGrid columns="2">
         <h:outputLabel value="Nome*"/>
         <h:inputText value="#{produtoBean.produto.nome}" required="true" requiredMessage="*campo nome é obrigatório"/>

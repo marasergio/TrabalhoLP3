@@ -28,7 +28,7 @@ public class FiltroWeb implements Filter {
                 }
                 else{
                     System.err.println("Usuario NÃO Logado");
-                    ((HttpServletResponse)response).sendRedirect("../error.xhtml");
+                    ((HttpServletResponse)response).sendRedirect("../index.xhtml");
                 }
             }
             

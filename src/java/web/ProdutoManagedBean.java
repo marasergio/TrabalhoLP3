@@ -33,27 +33,13 @@ public class ProdutoManagedBean {
         return this.listaProdutos;
     }
 
-    
-    public Produto getProduto() {
-        return produto;
-    }
-    
-    public String salvar(){
+     public String salvar(){
         ProdutoDao dao = new ProdutoDao();
         dao.salveUpdate(produto);
         this.produto = new Produto();
         return "PRODUTO_SALVO";
     }
 
-    public String prepararCadastrar(){
-        produto = new Produto();
-        return "CADASTRAR_PRODUTO";
-    }
-
-    public String prepararAlterar(){
-        return "ALTERAR";
-    }
-    
     public void excluir(){
         ProdutoDao dao = new ProdutoDao();
         dao.delete(produto);
@@ -63,6 +49,10 @@ public class ProdutoManagedBean {
     
     public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+    
+    public Produto getProduto() {
+        return produto;
     }
     
         
