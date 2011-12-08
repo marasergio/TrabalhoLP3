@@ -14,7 +14,7 @@ and open the template in the editor.
         <h1>Pedidos</h1>
         
         <h:form>
-            <p><h:commandLink value="Novo pedido" action="NOVO_PEDIDO"/></p>
+            <p><h:commandButton value="Novo pedido" action="#{pedidoBean.novoPedido}"/></p>
             
             <h:dataTable var="pedido" value="#{pedidoBean.listaPedidos}" border="1" cellpadding="5" cellspacing="0">
                 <h:column>
@@ -24,7 +24,7 @@ and open the template in the editor.
                 
                 <h:column>
                     <f:facet name="header">Numero</f:facet>
-                    <h:outputText value="00#{pedido.numero}"/>
+                    <h:outputText value="#{pedido.numero}"/>
                 </h:column>
                 
                 <h:column>
@@ -43,6 +43,8 @@ and open the template in the editor.
                     </h:commandButton>
                 </h:column>
             </h:dataTable>
+            
+            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
         </h:form>
     </h:body>
 </html>

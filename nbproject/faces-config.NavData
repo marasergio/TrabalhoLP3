@@ -2,15 +2,22 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="protegido/pedido/pedidos.xhtml" x="568" y="377" zoom="true"/>
-        <Node id="protegido/produto/produtos.xhtml" x="1312" y="371" zoom="true"/>
-        <Node id="error.xhtml" x="22" y="207" zoom="true"/>
-        <Node id="protegido/index.xhtml" x="273" y="491" zoom="true"/>
-        <Node id="index.xhtml" x="51" y="404" zoom="false"/>
-        <Node id="protegido/produto/gerenciarProduto.xhtml" x="1286" y="38" zoom="true"/>
-        <Node id="protegido/*" x="253" y="189" zoom="true"/>
-        <Node id="protegido/cliente/gerenciarCliente.xhtml" x="912" y="41" zoom="true"/>
-        <Node id="protegido/cliente/clientes.xhtml" x="937" y="375" zoom="false"/>
+        <Node id="protegido/pedido/adicionarItem.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="protegido/pedido/pedidos.xhtml" x="413" y="29" zoom="true"/>
+        <Node id="novoUsuario.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="protegido/pedido/fecharPedido.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="protegido/index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="protegido/produto/gerenciarProduto.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="protegido/cliente/clientes.xhtml" x="150" y="450" zoom="false"/>
+        <Node id="protegido/pedido/verPedido.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="protegido/pedido/selecioneCliente.xhtml" x="732" y="78" zoom="true"/>
+        <Node id="protegido/produto/produtos.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="error.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="938" y="247" zoom="false"/>
+        <Node id="protegido/*" x="150" y="300" zoom="true"/>
+        <Node id="protegido/cliente/gerenciarCliente.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="protegido/pedido/selecioneProduto.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="protegido/pedido/finalizarPedido.xhtml" x="150" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

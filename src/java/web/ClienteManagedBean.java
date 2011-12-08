@@ -4,6 +4,7 @@
  */
 package web;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
@@ -20,7 +21,7 @@ import persistencia.entidades.Cliente;
 public class ClienteManagedBean {
     private Cliente cliente;
     private List<Cliente> listaClientes;
-    
+        
     public ClienteManagedBean(){
         this.cliente = new Cliente();
     }
@@ -51,11 +52,5 @@ public class ClienteManagedBean {
         listaClientes = dao.listCliente();
         return listaClientes;
     }
-
-    public void setListaClientes(List<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
-    }
-    
-    
-    
+        
 }

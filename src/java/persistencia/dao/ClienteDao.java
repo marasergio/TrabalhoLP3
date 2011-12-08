@@ -45,7 +45,7 @@ public class ClienteDao {
         
         String hql = "SELECT c FROM Cliente c WHERE  c.nome Like :nome";
         Query query = session.createQuery(hql);
-        query.setString("nome", "%" + nome + "%");
+        query.setString("nome", nome + "%");
 
         return query.list();
     }
@@ -55,5 +55,5 @@ public class ClienteDao {
          session.beginTransaction().begin();
          return (Cliente) session.get(Cliente.class, id);
      }
-     
+         
 }

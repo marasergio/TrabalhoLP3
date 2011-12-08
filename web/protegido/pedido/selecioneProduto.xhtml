@@ -10,46 +10,55 @@ and open the template in the editor.
     <h:head>
         <title>Trabalho LP3</title>
     </h:head>
-    
     <h:body>
         <h1>Novo Pedido</h1>
+
         <h:form>
             <h:commandLink value="Voltar" action="VOLTAR" />
-
-            <h2>1 - Selecione o Cliente</h2>
+            <h2>
+                2 - Selecione os Produtos para o(a) cliente: 
+                <h:outputText value="#{pedidoBean.pedido.cliente.nome}"/>
+                <h:commandButton value="Ver Pedido" action="VER_PEDIDO"/>
+                
+            </h2>
             
-            <h:dataTable var="cliente" value="#{clienteBean.listaClientes}" border="1" cellpadding="5" cellspacing="0">
+            <h:dataTable var="produto" value="#{produtoBean.listaProdutos}" border="1" cellpadding="5" cellspacing="0">
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="ID"/>
                     </f:facet>
-                    <h:outputText value="#{cliente.id}"/>
+                    <h:outputText value="#{produto.id}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="Nome"/>
                     </f:facet>
-                    <h:outputText value="#{cliente.nome}"/>
+                    <h:outputText value="#{produto.nome}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                        <h:outputText value="Email"/>
+                        <h:outputText value="Descrição"/>
                     </f:facet>
-                    <h:outputText value="#{cliente.email}"/>
+                    <h:outputText value="#{produto.descricao}"/>
                 </h:column>
-                
-                <h:column>
-                    <h:commandLink value="pedido" action="CLIENTE_SELECIONADO">
-                        <f:setPropertyActionListener value="#{cliente}" target="#{pedidoBean.pedido.cliente}" />
-                    </h:commandLink>
-                </h:column>
-                
 
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Preço"/>
+                    </f:facet>
+                    <h:outputText value="#{produto.preco}"/>
+                </h:column>
+
+                <h:column>
+                    <h:commandButton value="Adicionar" action="ADICIONAR">
+                        <f:setPropertyActionListener value="#{produto}" target="#{pedidoBean.item.produto}"/>
+                    </h:commandButton>
+                </h:column>
             </h:dataTable>
-            
-                
+
+
         </h:form>
     </h:body>
 </html>

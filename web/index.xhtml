@@ -7,15 +7,20 @@
     </h:head>
     <h:body>
         <h1>Trabalho LP3</h1>
-        
+
         <h2>Logar</h2>
         <h:form>
-            <h:outputLabel value="Email"/> 
-            <h:inputText value="#{loginBean.email}"/><br/>
-            <h:outputLabel value="Senha"/> 
-            <h:inputSecret value="#{loginBean.senha}"/><br/>
-            <h:commandButton value="Logar" action="#{loginBean.logar}"/>
-            
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Email"/> 
+                <h:inputText value="#{loginBean.usuario.email}"/>
+
+                <h:outputLabel value="Senha"/> 
+                <h:inputSecret value="#{loginBean.usuario.senha}"/>
+
+                <h:commandLink value="Novo usuário" action="CADASTRAR_USUARIO"/>
+                <h:commandButton value="Logar" action="#{loginBean.logar}" />
+
+            </h:panelGrid>
         </h:form>
     </h:body>
 </html>

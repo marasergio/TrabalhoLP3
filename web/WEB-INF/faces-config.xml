@@ -18,7 +18,18 @@
             <from-outcome>NAO_LOGADO</from-outcome>
             <to-view-id>/error.xhtml</to-view-id>
         </navigation-case>
-        
+        <navigation-case>
+            <from-outcome>CADASTRAR_USUARIO</from-outcome>
+            <to-view-id>/novoUsuario.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/novoUsuario.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>USUARIO_SALVO</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     
@@ -100,5 +111,92 @@
             <to-view-id>/protegido/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/pedidos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>NOVO_PEDIDO</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneCliente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>VER_PEDIDO</from-outcome>
+            <to-view-id>/protegido/pedido/verPedido.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/verPedido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/pedidos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/selecioneCliente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/pedidos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>CLIENTE_SELECIONADO</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneProduto.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/selecioneProduto.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneCliente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>VER_PEDIDO</from-outcome>
+            <to-view-id>/protegido/pedido/fecharPedido.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/selecioneProduto.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ADICIONAR</from-outcome>
+            <to-view-id>/protegido/pedido/adicionarItem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/finalizarPedido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneProduto.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>PEDIDO_SALVO</from-outcome>
+            <to-view-id>/protegido/pedido/pedidos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/fecharPedido.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneProduto.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>PEDIDO_SALVO</from-outcome>
+            <to-view-id>/protegido/pedido/pedidos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/protegido/pedido/adicionarItem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>ITEM_ADICIONADO</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneProduto.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>VOLTAR</from-outcome>
+            <to-view-id>/protegido/pedido/selecioneProduto.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

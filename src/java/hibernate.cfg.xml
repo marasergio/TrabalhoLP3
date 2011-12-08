@@ -14,5 +14,6 @@
     <mapping class="persistencia.entidades.Pedido"/>
     <mapping class="persistencia.entidades.Item"/>
     <mapping class="persistencia.entidades.Produto"/>
+    <mapping class="persistencia.entidades.Usuario"/>
   </session-factory>
 </hibernate-configuration>

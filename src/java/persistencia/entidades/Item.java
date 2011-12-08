@@ -50,6 +50,7 @@ public class Item {
     }
 
     public double getValor() {
+        this.setValor(this.valorItem());
         return valor;
     }
 
@@ -73,6 +74,8 @@ public class Item {
         this.produto = produto;
     }
     
-    
+    public double valorItem(){
+        return this.produto.getPreco() * this.quantidade;
+    }
     
 }

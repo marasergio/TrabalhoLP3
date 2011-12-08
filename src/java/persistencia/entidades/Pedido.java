@@ -18,7 +18,7 @@ import org.hibernate.annotations.Cascade;
 @Table(name="tb_pedido")
 public class Pedido implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     @Column(name="ped_id")
     private Long id;
     
@@ -32,8 +32,8 @@ public class Pedido implements Serializable {
     @JoinColumn(name="id_cliente")
     private Cliente cliente;
     
-    @OneToMany(mappedBy="pedido",fetch= FetchType.LAZY)
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @OneToMany(mappedBy="pedido")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private List<Item> itens = new ArrayList<Item>();
 
     public Pedido() {
@@ -72,6 +72,7 @@ public class Pedido implements Serializable {
     }
 
     public double getTotal() {
+        this.setTotal(this.totalPedido());
         return total;
     }
 
@@ -79,5 +80,11 @@ public class Pedido implements Serializable {
         this.total = total;
     }
     
-    
+    public double totalPedido(){
+        double tPedido = 0;
+        for(Item item : itens){
+            tPedido += item.getValor();
+        }
+        return tPedido;
+    }
 }

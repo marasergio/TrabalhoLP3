@@ -65,7 +65,7 @@ public class PedidoDao {
         pedido.setCliente(cliente);
         //pedido.setId(1L);
         pedido.setNumero(001);
-        pedido.setTotal(000);
+       // pedido.setTotal(000);
         pedido.setItens(itens);
         
         PedidoDao dao = new PedidoDao();
