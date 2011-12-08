@@ -58,9 +58,7 @@ public class PedidoManagedBean {
         return "NOVO_PEDIDO";
     }
     public String addCarrinho(){
-        //item.setValor(item.valorItem());         
-       // pedido.setTotal(pedido.totalPedido());
-        
+        item.setPedido(pedido);
         pedido.getItens().add(item);
         item = new Item();
         return "ITEM_ADICIONADO";

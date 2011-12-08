@@ -18,10 +18,11 @@ and open the template in the editor.
             <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
             
             <p>
-                <b>Cliente:</b> <h:outputText value="#{pedidoBean.pedido.cliente.nome}" /><br/>
-                <b>Numero Pedido:</b> <h:inputText value="#{pedidoBean.pedido.numero}" /><br/>
-                <b>Total do Pedido:</b> R$ <h:outputText value="#{pedidoBean.pedido.total}" /> 
+                <b>Cliente: </b> <h:outputText value="#{pedidoBean.pedido.cliente.nome}" /><br/>
+                <b>Numero Pedido: </b> <h:inputText value="#{pedidoBean.pedido.numero}" /><br/>
+                <b>Total do Pedido: </b> R$ <h:outputText value="#{pedidoBean.pedido.total}" /> 
                 <h:inputHidden value="#{pedidoBean.pedido.id}"/>
+                <br/><br/>
                 <h:commandButton value="Concluir Pedido" action="#{pedidoBean.salvarPedido}"/>
             </p>
             

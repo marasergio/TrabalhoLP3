@@ -18,7 +18,7 @@ import org.hibernate.annotations.Cascade;
 @Table(name="tb_pedido")
 public class Pedido implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ped_id")
     private Long id;
     

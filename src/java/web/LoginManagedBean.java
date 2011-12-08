@@ -20,11 +20,9 @@ import persistencia.dao.UsuarioDao;
  * @author Mara
  */
 @ManagedBean(name = "loginBean")
-@SessionScoped
+@RequestScoped
 public class LoginManagedBean {
-
     private Usuario usuario;
-    private List<Usuario> usuarios;
 
     public LoginManagedBean() {
         usuario = new Usuario();
@@ -36,9 +34,10 @@ public class LoginManagedBean {
         ExternalContext externalContext = facesContext.getExternalContext();
         HttpSession session = ((HttpServletRequest) externalContext.getRequest()).getSession();
 
+        List<Usuario> usuarios = new UsuarioDao().listaUsuarios();
 
         // validar se usuário é válido
-        for (Usuario user : getUsuarios()) {
+        for (Usuario user : usuarios) {
             if (user.getEmail().equals(usuario.getEmail()) && 
                     user.getSenha().equals(usuario.getSenha())) {
                 session.setAttribute("LOGADO", "SIM");
@@ -47,13 +46,6 @@ public class LoginManagedBean {
         }
         return "NAO_LOGADO";
 
-    }
-
-    public String salvar() {
-        UsuarioDao dao = new UsuarioDao();
-        dao.salvar(usuario);
-        usuario = new Usuario();
-        return "USUARIO_SALVO";
     }
 
     /** Creates a new instance of Login */
@@ -71,15 +63,5 @@ public class LoginManagedBean {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-
-    public List<Usuario> getUsuarios() {
-        UsuarioDao dao = new UsuarioDao();
-        usuarios = dao.listaUsuarios();
-        return usuarios;
-    }
-
-    public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
     }
 }

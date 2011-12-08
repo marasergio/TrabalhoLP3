@@ -18,15 +18,15 @@ and open the template in the editor.
             <p><h:commandLink value="voltar" action="VOLTAR"/></p>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome" />
-                <h:inputText value="#{loginBean.usuario.nome}"/>
+                <h:inputText value="#{usuarioBean.usuario.nome}"/>
                 
                 <h:outputLabel value="email" />
-                <h:inputText value="#{loginBean.usuario.email}"/>
+                <h:inputText value="#{usuarioBean.usuario.email}"/>
                 
                 <h:outputLabel value="Senha" />
-                <h:inputSecret value="#{loginBean.usuario.senha}"/>
+                <h:inputSecret value="#{usuarioBean.usuario.senha}"/>
                 
-                <h:commandButton value="salvar" action="#{loginBean.salvar}" />
+                <h:commandButton value="salvar" action="#{usuarioBean.salvar}" />
             </h:panelGrid>
         </h:form>
     </h:body>
