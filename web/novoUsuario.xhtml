@@ -10,12 +10,13 @@ and open the template in the editor.
 
     <h:head>
         <title>Trabalho LP3</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css" />
     </h:head>
-    <h:body>
+    <h:body style="font-family: calibri, arial;">
         <h1>Novo Usuário</h1>
-
+        <hr/>
         <h:form>
-            <p><h:commandLink value="voltar" action="VOLTAR"/></p>
+            <p><h:commandLink value=":: voltar" action="VOLTAR"/></p>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome" />
                 <h:inputText value="#{usuarioBean.usuario.nome}"/>

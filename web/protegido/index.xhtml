@@ -6,22 +6,24 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
-    <head>
+    <h:head>
         <title>Trabalho LP3</title>
-    </head>
-    <body>
-        <h1>Seja bem-vindo</h1>
+       
+    </h:head>
+    <h:body style="font-family: calibri, arial;" >
+        <h1>Seja bem-vindo</h1><hr/>
+        
+        
+        <h:form>
+            <h:commandLink value=":: logoff" action="#{loginBean.logoff}"/>
+                
+            <ul>
+                <li><h:commandLink value="Clientes" action="CLIENTE"/></li>
+                <li><h:commandLink value="Produtos" action="PRODUTO"/></li>
+                <li><h:commandLink value="Pedidos" action="PEDIDO"/></li>
+            </ul>
+        </h:form>
 
-    <h:form>
-        <h:commandButton value="logoff" action="#{loginBean.logoff}"/>
 
-        <ul>
-            <li><h:commandLink value="Clientes" action="CLIENTE"/></li>
-            <li><h:commandLink value="Produtos" action="PRODUTO"/></li>
-            <li><h:commandLink value="Pedidos" action="PEDIDO"/></li>
-        </ul>
-    </h:form>
-
-
-</body>
+    </h:body>
 </html>

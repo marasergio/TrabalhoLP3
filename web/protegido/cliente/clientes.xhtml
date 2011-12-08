@@ -9,10 +9,11 @@ and open the template in the editor.
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Trabalho LP3</title>
-    </h:head>
-    <h:body>
-        <h1>Clientes</h1>
         
+    </h:head>
+    <h:body style="font-family: calibri, arial;">
+        <h1>Clientes</h1>
+        <hr/>
         <h:form>
             <h:commandButton value="Novo Cliente" action="CADASTRAR_CLIENTE"/><br/><br/>
             <h:dataTable var="cliente" value="#{clienteBean.listaClientes}" border="1" cellpadding="5" cellspacing="0">
@@ -50,7 +51,7 @@ and open the template in the editor.
                 </h:column>
             </h:dataTable>
             
-            <p><h:commandLink value="Voltar" action="VOLTAR"/></p>
+            <p><h:commandLink value=":: Voltar" action="VOLTAR"/></p>
             
         </h:form>
     </h:body>
